@@ -67,9 +67,9 @@ a:hover, a:focus { color: #fff; }
 .meta { display: block; margin-top: 18px; }
 
 .item { width: 33.3333%; height: 240px; float: left; position: relative; text-align: center; overflow: hidden; padding: 0 10px 20px; }
-.item a:focus .item__content, .item a:hover .item__content { bottom: 31px; }
-.item a:focus .icon, .item a:hover .icon { bottom: auto; top: 56px; }
-.item a:focus .overlay, .item a:hover .overlay { background-color: transparent; }
+.item:focus .item__content, .item:hover .item__content { bottom: 31px; }
+.item:focus .icon, .item:hover .icon { bottom: auto; top: 56px; }
+.item:focus .overlay, .item:hover .overlay { background-color: transparent; }
 .item .icon { position: absolute; top: -100px; left: 0; right: 0; z-index: 3; -webkit-transition: top 0.5s; transition: top 0.5s; }
 
 .item__pic { top: 0; right: 10px; bottom: 20px; left: 10px; position: absolute; background-size: cover; background-position: center; background-repeat: no-repeat; }

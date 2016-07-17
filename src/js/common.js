@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+	//dropDown
 	function dropDown () {
 		$('.js-dropdown').click(function() {
 			var that     = $(this),
@@ -24,10 +24,13 @@ $(document).ready(function() {
 		if(win) {
 			dropDown();
 		} else {
-			$('.list').removeClass('is-open');
-			$('.js-dropdown').unbind();
+			// $('.list').removeClass('is-open');
+			// $('.js-dropdown').unbind();
 		}
 	}
 
 	$(window).on('load resize', winSize);
+
+
+	
 });

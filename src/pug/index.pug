@@ -41,13 +41,12 @@ block content
 
 					-for(var t = 0; t < images.length; t++) {
 						article.item
-							a(href="#")
-								.overlay
-								.item__pic(style="background-image: url(" + images[t] + ")")
-								i.icon.i-icon-search
-								.item__content
-									.item__title Mountain view
-									.item__subtitle 21.04.2014, Iceland
+							.overlay
+							.item__pic(style="background-image: url(" + images[t] + ")")
+							a(href="#" class="icon i-icon-search")
+							.item__content
+								.item__title Mountain view
+								.item__subtitle 21.04.2014, Iceland
 					-}
 			//- END l-main
 		//- END l-layout
