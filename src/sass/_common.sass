@@ -1,0 +1,189 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+// 			+s(codedby) 
+// ## gradient example
+//     	+g(#232323, #5c5c5c);
+//	   horizontal
+//     	+gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +r(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts
+// Save fonts to /src/fonts
+// +font(book, cytiapro-black-webfont)
+// and create mixin
+// =book
+// 	font-family: "book", Arial, sans-serif
+
+//fonts
++font("Open Sans Regular", "opensans-regular")
++font("Open Sans Bold", "opensans-bold")
+=reg
+	font-family: "Open Sans Regular", Arial, Helvetica, sans-serif
+=bold
+	font-family: "Open Sans Bold", Arial, Helvetica, sans-serif 
+	
+//vars
+$red: #e74c3c
+$yellow: #f1c40f
+$green: #27ae60
+
+//basic
+html
+	font-size: 62.5%
+
+body
+	+reg
+	+fs(14)
+	line-height: 1.4
+	background-color: #FFF
+	color: #424A51 
+
+img
+	display: block
+	width: 100%
+.icon
+	display: block
+	margin: auto
+
+// common blocks
+.l-layout
+	display: table
+	table-layout: fixed
+	width: 100%
+.l-side
+	display: table-cell
+	width: 260px
+	vertical-align: top
+	background-color: #141414
+	+r(1024)
+		width: 200px
+.l-main
+	display: table-cell
+	vertical-align: top
+.l-main__in
+	+clr
+	+rm(769)
+		padding: 0 10px
+.top-block
+	text-align: center
+	color: #f4f4f4
+	padding: 32px 24px 25px
+.profile
+	position: relative
+	border-radius: 50%
+	overflow: hidden
+	border: 3px solid #fff
+	width: 106px
+	height: 106px
+	display: inline-block
+.profile-name
+	+fs(24)
+	margin-top: 20px
+.meta
+	display: block
+	margin-top: 18px
+.item
+	width: 33.3333%
+	height: 240px
+	float: left
+	position: relative
+	text-align: center
+	overflow: hidden
+	padding: 0 10px
+	+r(1024)
+		width: 50%
+	+r(768)
+		width: 100%
+	&:hover
+		.item__content
+			bottom: 31px
+		.icon
+			bottom: auto
+			top: 56px
+	.icon
+		position: absolute
+		top: -100px
+		left: 0
+		right: 0
+		z-index: 3
+		+tr(top 0.5s)
+.item__content
+	position: absolute
+	left: 0
+	right: 0
+	bottom: -150px
+	margin: auto
+	padding: 25px
+	z-index: 2
+	+bold
+	color: #fff
+	+tr(bottom 0.5s)
+.item__title
+	+fs(24)
+	line-height: 1
+.item__subtitle
+	+fs(12)
+.overlay
+	background-color: rgba(0, 0, 0, 0.85) 
+	bottom: 10px
+	top: 0
+	left: 10px
+	right: 10px
+	position: absolute
+	z-index: 1
+.list
+	position: relative
+	border-top: 1px solid #262626
+	+bold
+	+fs(14)
+	padding: 19px 0
+	&:nth-child(2)
+		.list__title
+			color: $red
+		a
+			&:hover
+				color: $red
+				border-color: $red
+	&:nth-child(3)
+		.list__title
+			color: $yellow
+		a
+			&:hover
+				color: $yellow
+				border-color: $yellow
+	&:nth-child(4)
+		.list__title
+			color: $green
+		a
+			&:hover
+				color: $green
+				border-color: $green
+.list__title
+	padding: 0 20px 0 40px
+	line-height: normal
+	font-size: inherit
+	margin: 0 0 9px
+.list__content
+	a
+		padding: 0 20px 0 37px
+		display: block
+		+tr(all 0.3s)
+		cursor: pointer
+		line-height: 1.7142857142857142
+		border-left: 3px solid transparent
+		&:hover
+			color: #fff

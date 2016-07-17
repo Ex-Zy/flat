@@ -1,0 +1,53 @@
+extends _layout
+
+block title
+	title Title of template
+
+block content
+	.out
+		//- BEGIN l-layout
+		section.l-layout
+
+			//- BEGIN l-side
+			aside.l-side
+				.top-block
+					.profile
+						img(src="img/profile.jpg", alt="profile")
+					.profile-name John Doe
+					span.meta Photographer, Motion designer (San Francisco, California)
+
+				- var listLinks = [["Latest", "Popular", "Animations", "Photography", "Advertisement", "Motion design"], ["Skills", "Experience", "Education", "Clients", "Reviews", "Blog"], ["Address", "Social Networks", "Email"]];
+
+				- var listTitle = [["ARTWORKS"], ["ABOUT ME"], ["CONTACT ME"]];
+
+				- var len = listTitle.length;
+
+				- for(var i = 0; i < len; i++) {
+					.list
+						h5.list__title=listTitle[i]
+						ul.list__content
+							- for(var j = 0; j < listLinks[i].length; j++) {
+									li
+										a= listLinks[i][j]
+							-}
+				-}
+			//- END l-side
+
+			//- BEGIN l-main
+			main.l-main
+				.l-main__in
+
+					-var images = ['img/one.jpg', 'img/two.jpg', 'img/three.jpg', 'img/four.jpg', 'img/five.jpg'];
+
+					-for(var t = 0; t < images.length; t++) {
+						article.item
+							a(href="#")
+								.overlay
+								.item__pic(style="background-image: url(#{images[t]})")
+								i.icon.i-icon-search
+								.item__content
+									.item__title Mountain view
+									.item__subtitle 21.04.2014, Iceland
+					-}
+			//- END l-main
+		//- END l-layout
