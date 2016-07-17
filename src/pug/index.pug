@@ -24,7 +24,7 @@ block content
 
 				- for(var i = 0; i < len; i++) {
 					.list
-						h5.list__title=listTitle[i]
+						h5.list__title.js-dropdown=listTitle[i]
 						ul.list__content
 							- for(var j = 0; j < listLinks[i].length; j++) {
 									li
@@ -43,7 +43,7 @@ block content
 						article.item
 							a(href="#")
 								.overlay
-								.item__pic(style="background-image: url(#{images[t]})")
+								.item__pic(style="background-image: url(" + images[t] + ")")
 								i.icon.i-icon-search
 								.item__content
 									.item__title Mountain view
